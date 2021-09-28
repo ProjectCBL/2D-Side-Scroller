@@ -224,16 +224,16 @@ Tilemap:
   - m_RefCount: 0
     m_Data:
       e00: -1.084227e-19
-      e01: -1.1693925e-17
-      e02: -1.1693197e-17
-      e03: -1.1693197e-17
+      e01: -1.1693912e-17
+      e02: -1.1693184e-17
+      e03: -1.1693184e-17
       e10: 5.28e-43
       e11: 5.2e-44
       e12: 5.2e-44
       e13: 5.2e-44
       e20: -1.1464323e-20
       e21: -1.1506921e-16
-      e22: 3.6819706
+      e22: 3.7417088
       e23: -1.1506921e-16
       e30: 4.5904e-41
       e31: 5.28e-43
@@ -266,8 +266,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!61 &385065182
-BoxCollider2D:
+--- !u!19719996 &385065182
+TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -280,18 +280,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
