@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 385065181}
   - component: {fileID: 385065180}
   - component: {fileID: 385065182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap_Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2633,24 +2633,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4784533237447559450
+--- !u!1001 &1878451051
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4631514034703667909, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4784533238001006059, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784533238001006059, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.23
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 4784533238001006059, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.45
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 4784533238001006059, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2690,38 +2694,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
---- !u!1 &4784533237447559451 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4784533238001006071, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
-  m_PrefabInstance: {fileID: 4784533237447559450}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4784533237447559452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784533237447559451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
