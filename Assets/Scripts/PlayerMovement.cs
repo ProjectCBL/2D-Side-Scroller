@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ceilingCheck;
     public LayerMask whatIsCeiling;
     public LayerMask whatIsGrounded;
+    public bool playerFacingRight = true;
     [Range(0,10)] public float radiusCheck;
     [Range(0,80)] public float speed = 40f;
     [Range(0, 400)] public float jumpForce = 40f;
@@ -94,9 +95,16 @@ public class PlayerMovement : MonoBehaviour
     /*=============================Sprite Changes================================*/
 
     private void FlipSprite(){
+
         Vector3 newScale = transform.localScale;
         newScale.x = (inputValueX > 0) ? 1 : -1;
         transform.localScale = newScale;
+
+        if (inputValueX > 0) 
+            playerFacingRight = true;
+        else if (inputValueX < 0) 
+            playerFacingRight = false;
+
     }
 
     private void ChangeToRunAnimation()
