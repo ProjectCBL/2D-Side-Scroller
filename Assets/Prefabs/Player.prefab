@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497406089022530196}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ceiling Check
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,10 +42,11 @@ GameObject:
   - component: {fileID: 4784533238001006058}
   - component: {fileID: 4784533238001006069}
   - component: {fileID: 4784533238001006068}
+  - component: {fileID: 2676500984870537517}
   - component: {fileID: 4784533237447559452}
   - component: {fileID: 4631514034703667909}
-  - component: {fileID: 2676500984870537517}
-  m_Layer: 0
+  - component: {fileID: 3803953093173835434}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +167,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.56235147, y: 0.59031487}
   m_EdgeRadius: 0
+--- !u!58 &2676500984870537517
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784533238001006071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.25}
+  serializedVersion: 2
+  m_Radius: 0.27727997
 --- !u!114 &4784533237447559452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197dfa1dffc4fd145b4aacec8cf9bc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3803953093173835434}
   rb: {fileID: 4784533238001006069}
   groundCheck: {fileID: 9130817080324804749}
   ceilingCheck: {fileID: 4000089778529297304}
@@ -300,23 +318,26 @@ MonoBehaviour:
   lowJumpMultiplier: 3.25
   gravityMultiplier: 3.8
   pressedJump: 0
-  jumpCooldownLimit: 1
---- !u!58 &2676500984870537517
-CircleCollider2D:
+  jumpCooldownLimit: 0.1
+--- !u!95 &3803953093173835434
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4784533238001006071}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
-  serializedVersion: 2
-  m_Radius: 0.27727997
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46304e16a916f0247ad9514580d06e29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9130817080324804749
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6691645679280197496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
