@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public Animator anim;
     public Rigidbody2D rb;
     public GameObject groundCheck;
     public GameObject ceilingCheck;
@@ -48,7 +49,9 @@ public class PlayerMovement : MonoBehaviour
             movementSmoothing               // Steps to take per frame to get to target
         );
 
+        // Sprite Changes
         if (inputValueX != 0) FlipSprite();
+        ChangeToRunAnimation();
 
     }
 
@@ -82,6 +85,10 @@ public class PlayerMovement : MonoBehaviour
             jumpCooldown = Mathf.Clamp(jumpCooldown, 0, jumpCooldownLimit);
         }
 
+        // Animation Change ---------------------------------------------------
+
+        ChangeToJumpAnimation(isGrounded);
+
     }
 
     /*=============================Sprite Changes================================*/
@@ -90,6 +97,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newScale = transform.localScale;
         newScale.x = (inputValueX > 0) ? 1 : -1;
         transform.localScale = newScale;
+    }
+
+    private void ChangeToRunAnimation()
+    {
+        if (inputValueX != 0) anim.SetBool("Running", true);
+        else anim.SetBool("Running", false);
+    }
+
+    private void ChangeToJumpAnimation(bool isGrounded)
+    {
+        if (isGrounded) anim.SetBool("IsGrounded", true);
+        else anim.SetBool("IsGrounded", false);
     }
 
     /*===========================Input Action Events=============================*/
