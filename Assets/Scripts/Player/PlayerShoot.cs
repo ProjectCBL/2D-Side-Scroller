@@ -6,17 +6,21 @@ using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
 {
 
+    public Animator anim;
     public GameObject bullet;
-    public GameObject muzzleFlare;
+    public GameObject muzzle;
     public GameObject bulletSpawn;
     public GameObject bulletContainer;
     public PlayerMovement movementScript;
+    [Range(0, 80.0f)] public float bulletSpeed = 40.0f;
 
+    private Muzzle muzzleScript;
     [SerializeField] private bool shootPressed = false;
 
     // Called once the game object is enabled
     void Awake()
     {
+        muzzleScript = muzzle.GetComponent<Muzzle>();
         bulletContainer = GameObject.Find("Bullet Container");
     }
 
@@ -32,10 +36,33 @@ public class PlayerShoot : MonoBehaviour
     {
         if (shootPressed)
         {
-            OrientBulletDirection(SpawnBullet());
+            anim.SetBool("IsShooting", false);
+            StopAllCoroutines();
+            
+            StartCoroutine(muzzleScript.PlayMuzzleAnimation());
+
+            GameObject bullet = SpawnBullet();
+            OrientBulletDirection(bullet);
+
+            bullet.GetComponent<BulletController>().bulletSpeed = bulletSpeed;
+            bullet.GetComponent<BulletController>().PropellBullet();
+
+            anim.SetBool("IsShooting", true);
+            StartCoroutine(ResetShootingAnimation());
+
             shootPressed = !shootPressed;
         }
     }
+
+    /* ==================== Animation ==================== */
+
+    private IEnumerator ResetShootingAnimation()
+    {
+        for (int i = 0; i < 5; i++) yield return null;
+        anim.SetBool("IsShooting", false);
+    }
+
+    /* ==================== Bullet Operations ==================== */
 
     private void OrientBulletDirection(GameObject bullet)
     {
