@@ -36,6 +36,7 @@ public class BulletController : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
         else if(collision.tag == "Ground")
         {
