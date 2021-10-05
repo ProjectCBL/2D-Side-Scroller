@@ -5,6 +5,7 @@ using UnityEngine;
 public class Knockback : MonoBehaviour
 {
     private float xScaleDirection;
+
     [Range(0, 80.0f)] public float knockBackStrength = 40.0f;
 
     private void Update()
