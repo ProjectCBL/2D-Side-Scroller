@@ -5,6 +5,7 @@ using UnityEngine;
 public class CaterpillarBehaviour : MonoBehaviour
 {
 
+    public Animator anim;
     public Rigidbody2D rb;
     public GameObject player;
     public GameObject headCheck;
@@ -48,6 +49,8 @@ public class CaterpillarBehaviour : MonoBehaviour
             transform.position,
             newTargetPoint,
             speed * Time.deltaTime);
+
+        anim.SetBool("Move", true);
 
     }
 
