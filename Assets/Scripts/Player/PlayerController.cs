@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
         WITHGUN
     }
 
+    [SerializeField] private int playerHealth = 3;
     [SerializeField] public PlayerMovement movementScript;
     [SerializeField] public PlayerShoot shootScript;
     [SerializeField] public RuntimeAnimatorController noGunAnimations;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // Called once per frame
     void Update()
     {
+        CheckHealth();
         if (currentPlayerState == PlayerStates.WITHGUN) TurnOnShootScript();
         else TurnOffShootScript();
     }
@@ -58,6 +60,21 @@ public class PlayerController : MonoBehaviour
     private void SwitchMovementAnimator(PlayerStates state)
     {
         movementScript.anim.runtimeAnimatorController = (state == PlayerStates.NOGUN) ? noGunAnimations : gunAnimations;
+    }
+
+    private void CheckHealth()
+    {
+        if (playerHealth <= 0) KillPlayer();
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        playerHealth -= damage;
+    }
+
+    private void KillPlayer()
+    {
+        Destroy(this.gameObject);
     }
 
 }
