@@ -11,7 +11,6 @@ public class BulletController : MonoBehaviour
 
     [SerializeField] private float currentLifeSpan = 0.0f;
 
-    // Update is called once per frame
     void Update()
     {
         currentLifeSpan += Time.deltaTime;
