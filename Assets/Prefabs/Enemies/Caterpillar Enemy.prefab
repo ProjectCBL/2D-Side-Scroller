@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2232495334976812612}
   - component: {fileID: 5531008134655977336}
   - component: {fileID: 6953150918524667667}
+  - component: {fileID: 5555478120329392643}
   m_Layer: 7
   m_Name: Caterpillar Enemy
   m_TagString: Enemy
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab74680f96c09840b90b7f69ec7db3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 5555478120329392643}
   rb: {fileID: 4725472550509790952}
   player: {fileID: 0}
   headCheck: {fileID: 8100084911663765620}
@@ -213,6 +215,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.30497536}
   m_EdgeRadius: 0
+--- !u!95 &5555478120329392643
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357403012914146012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20d5302857c2f804eba1da8aa55c906c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8100084911663765620
 GameObject:
   m_ObjectHideFlags: 0
