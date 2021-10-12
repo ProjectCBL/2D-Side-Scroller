@@ -6,6 +6,7 @@ public class Knockback : MonoBehaviour
 {
     private float xScaleDirection;
 
+    public int damageDealt = 1;
     [Range(0, 80.0f)] public float knockBackStrength = 40.0f;
 
     private void Update()
@@ -19,6 +20,7 @@ public class Knockback : MonoBehaviour
         if(collision.tag == "Player")
         {
             GameObject player = collision.gameObject;
+            player.GetComponent<PlayerController>().DamagePlayer(damageDealt);
             KnockBackGameObject(player, xScaleDirection);
         }
 

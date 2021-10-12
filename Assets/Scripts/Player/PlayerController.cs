@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
         else TurnOffShootScript();
     }
 
+    /* =========================== Shoot Script =========================== */
+
     public void TurnOnShootScript()
     {
         if (!shootScript.enabled) shootScript.enabled = true;
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
     {
         shootScript.enabled = false;
     }
+
+    /* =========================== Sprite and Animation =========================== */
 
     public void SwitchAnimationAndSprite()
     {
@@ -61,6 +65,8 @@ public class PlayerController : MonoBehaviour
     {
         movementScript.anim.runtimeAnimatorController = (state == PlayerStates.NOGUN) ? noGunAnimations : gunAnimations;
     }
+
+    /* =========================== Player Health =========================== */
 
     private void CheckHealth()
     {
