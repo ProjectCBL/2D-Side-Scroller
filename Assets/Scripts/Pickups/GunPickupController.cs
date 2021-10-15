@@ -67,6 +67,7 @@ public class GunPickupController : MonoBehaviour
             GameObject player = collision.gameObject;
             player.GetComponent<PlayerController>().SwitchAnimationAndSprite();
             Destroy(this.gameObject);
+            isPlayerTouching = true;
         }
 
     }
