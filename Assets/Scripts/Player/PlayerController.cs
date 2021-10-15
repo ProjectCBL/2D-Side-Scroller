@@ -10,15 +10,19 @@ public class PlayerController : MonoBehaviour
         WITHGUN
     }
 
-    [SerializeField] private int playerHealth = 3;
-    [SerializeField] public PlayerMovement movementScript;
-    [SerializeField] public PlayerShoot shootScript;
-    [SerializeField] public RuntimeAnimatorController noGunAnimations;
-    [SerializeField] public RuntimeAnimatorController gunAnimations;
-    [SerializeField] public Sprite gunDefaultSprite;
-    [SerializeField] public Sprite noGunDefaultSprite;
-    [SerializeField] public SpriteRenderer spriteRenderer;
-    [SerializeField] public PlayerStates currentPlayerState = PlayerStates.NOGUN;
+    public int playerHealth = 3;
+    public bool isPlayerInvincible = false;
+    [Range(0, 50)] public int defaultAmmoCount = 20;
+    [Range(0, 50)] public int currentAmmoCount = 20;
+
+    [SerializeField] private PlayerMovement movementScript;
+    [SerializeField] private PlayerShoot shootScript;
+    [SerializeField] private RuntimeAnimatorController noGunAnimations;
+    [SerializeField] private RuntimeAnimatorController gunAnimations;
+    [SerializeField] private Sprite gunDefaultSprite;
+    [SerializeField] private Sprite noGunDefaultSprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private PlayerStates currentPlayerState = PlayerStates.NOGUN;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckHealth();
+        CheckAmmoCount();
         if (currentPlayerState == PlayerStates.WITHGUN) TurnOnShootScript();
         else TurnOffShootScript();
     }
@@ -47,6 +52,11 @@ public class PlayerController : MonoBehaviour
         shootScript.enabled = false;
     }
 
+    private void CheckAmmoCount()
+    {
+        if (currentAmmoCount <= 0) SwitchAnimationAndSprite();
+    }
+
     /* =========================== Sprite and Animation =========================== */
 
     public void SwitchAnimationAndSprite()
@@ -54,6 +64,7 @@ public class PlayerController : MonoBehaviour
         currentPlayerState = (currentPlayerState == PlayerStates.NOGUN) ? PlayerStates.WITHGUN : PlayerStates.NOGUN;
         SwitchSprite(currentPlayerState);
         SwitchMovementAnimator(currentPlayerState);
+        currentAmmoCount = defaultAmmoCount;
     }
 
     private void SwitchSprite(PlayerStates state)
@@ -67,6 +78,13 @@ public class PlayerController : MonoBehaviour
     }
 
     /* =========================== Player Health =========================== */
+
+    public IEnumerator ActivateInvincibiltyFrames()
+    {
+        isPlayerInvincible = true;
+        yield return new WaitForSeconds(1.0f);
+        isPlayerInvincible = false;
+    }
 
     private void CheckHealth()
     {
