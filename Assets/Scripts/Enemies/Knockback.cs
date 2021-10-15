@@ -20,8 +20,13 @@ public class Knockback : MonoBehaviour
         if(collision.tag == "Player")
         {
             GameObject player = collision.gameObject;
-            player.GetComponent<PlayerController>().DamagePlayer(damageDealt);
-            KnockBackGameObject(player, xScaleDirection);
+            PlayerController pController = player.GetComponent<PlayerController>();
+            if (!pController.isPlayerInvincible)
+            {
+                pController.DamagePlayer(damageDealt);
+                KnockBackGameObject(player, xScaleDirection);
+                pController.StartCoroutine(pController.ActivateInvincibiltyFrames());
+            }
         }
 
     }
