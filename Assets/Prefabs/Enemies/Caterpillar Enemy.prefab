@@ -157,7 +157,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  overlapCapsuleX: 0.35
+  overlapCapsuleX: 0.25
   overlapCapsuleY: 0.35
   bounceStrength: 12
 --- !u!114 &2232495334976812612
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a512f0f906d4005489f9792d0999fdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageDealt: 1
   knockBackStrength: 20.1
 --- !u!58 &5531008134655977336
 CircleCollider2D:
