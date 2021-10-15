@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletSpawn;
     public GameObject bulletContainer;
     public PlayerMovement movementScript;
+    public PlayerController playerController;
     [Range(0, 80.0f)] public float bulletSpeed = 40.0f;
 
     private Muzzle muzzleScript;
@@ -37,7 +38,7 @@ public class PlayerShoot : MonoBehaviour
         if (shootPressed)
         {
             anim.SetBool("IsShooting", false);
-            StopAllCoroutines();
+            //StopAllCoroutines();
             
             StartCoroutine(muzzleScript.PlayMuzzleAnimation());
 
@@ -50,6 +51,7 @@ public class PlayerShoot : MonoBehaviour
             anim.SetBool("IsShooting", true);
             StartCoroutine(ResetShootingAnimation());
 
+            playerController.currentAmmoCount -= 1;
             shootPressed = !shootPressed;
         }
     }
