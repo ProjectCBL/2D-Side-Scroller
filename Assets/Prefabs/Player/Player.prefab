@@ -443,6 +443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
+  defaultAmmoCount: 20
+  currentAmmoCount: 20
   movementScript: {fileID: 4631514034703667909}
   shootScript: {fileID: 4739220164075877836}
   noGunAnimations: {fileID: 9100000, guid: 46304e16a916f0247ad9514580d06e29, type: 2}
@@ -469,6 +471,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4484740924256920331}
   bulletContainer: {fileID: 0}
   movementScript: {fileID: 4631514034703667909}
+  playerController: {fileID: 15190553022747657}
   bulletSpeed: 34.5
   shootPressed: 0
 --- !u!114 &4631514034703667909
