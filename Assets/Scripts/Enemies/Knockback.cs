@@ -24,22 +24,34 @@ public class Knockback : MonoBehaviour
             if (!pController.isPlayerInvincible)
             {
                 pController.DamagePlayer(damageDealt);
-                KnockBackGameObject(player, xScaleDirection);
+                KnockBackGameObject(player);
                 pController.StartCoroutine(pController.ActivateInvincibiltyFrames());
             }
         }
 
     }
 
-    private void KnockBackGameObject(GameObject entity, float direction)
+    private void KnockBackGameObject(GameObject entity)
     {
         Rigidbody2D entityRb = entity.GetComponent<Rigidbody2D>();
-        Vector2 knockBackDirection = new Vector2(1 * direction, 0.5f);
+        Vector2 knockBackDirection = new Vector2(GetDirection(entity), 0.5f);
 
         // Zeroing out the velocity is must as in combination with bounce script can
         // result in the player being knocked back and going sky high.
         entityRb.velocity = Vector2.zero;
         entityRb.AddForce(knockBackDirection * knockBackStrength, ForceMode2D.Impulse);
+    }
+
+    private float GetDirection(GameObject entity)
+    {
+        float entityFacingDirection = entity.transform.localScale.x;
+
+        if (entityFacingDirection == transform.localScale.x)
+            return entityFacingDirection * -1;
+        else if (entityFacingDirection != transform.localScale.x)
+            return transform.localScale.x;
+        else
+            return transform.localScale.x;
     }
 
 }
