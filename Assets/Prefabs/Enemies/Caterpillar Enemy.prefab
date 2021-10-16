@@ -158,8 +158,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   overlapCapsuleX: 0.25
-  overlapCapsuleY: 0.35
-  bounceStrength: 12
+  overlapCapsuleY: 0.5
+  bounceStrength: 17
 --- !u!114 &2232495334976812612
 MonoBehaviour:
   m_ObjectHideFlags: 0
