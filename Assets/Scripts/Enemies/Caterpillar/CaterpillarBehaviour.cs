@@ -5,6 +5,12 @@ using UnityEngine;
 public class CaterpillarBehaviour : MonoBehaviour
 {
 
+    private enum BehaviourToggle
+    {
+        ON,
+        OFFF
+    }
+
     public Animator anim;
     public Rigidbody2D rb;
     public GameObject player;
@@ -22,20 +28,28 @@ public class CaterpillarBehaviour : MonoBehaviour
     [SerializeField] private float pathingPoint1;
     [SerializeField] private float pathingPoint2;
     [SerializeField] private bool isAggroed = false;
+    [SerializeField] private BehaviourToggle behaviourSwitch;
 
     private void Awake()
     {
         SetWalkingPoints();
         player = GameObject.Find("Player");
         targetPoint = (Random.Range(0, 9) <= 4) ? pathingPoint1 : pathingPoint2;
+        if (behaviourSwitch.Equals(BehaviourToggle.ON)) StartCoroutine(Behave());
     }
 
-    private void Update()
+    public IEnumerator Behave()
     {
-        HandleAggroEvent();
-        Crawl((isAggroed) ? agroCrawlSpeed : crawlSpeed);
-        if (!isAggroed) SwapPathingPresetPoints();
-        FlipSpriteTowardsTargetPoint();
+        while (true)
+        {
+            HandleAggroEvent();
+            if (!isAggroed) SwapPathingPresetPoints();
+            FlipSpriteTowardsTargetPoint();
+
+            Crawl((isAggroed) ? agroCrawlSpeed : crawlSpeed);
+
+            yield return null;
+        }
     }
 
     /* ======================== Path Controls ======================== */
