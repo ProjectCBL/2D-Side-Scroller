@@ -141,6 +141,7 @@ MonoBehaviour:
   pathingPoint1: 0
   pathingPoint2: 0
   isAggroed: 0
+  behaviourSwitch: 0
 --- !u!114 &6879229848912978272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +160,7 @@ MonoBehaviour:
     m_Bits: 8
   overlapCapsuleX: 0.25
   overlapCapsuleY: 0.5
+  capsuleDirection: 1
   bounceStrength: 17
 --- !u!114 &2232495334976812612
 MonoBehaviour:
