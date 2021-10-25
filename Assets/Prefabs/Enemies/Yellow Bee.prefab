@@ -10,12 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2192752616098829049}
   - component: {fileID: 2116584813441175768}
+  - component: {fileID: 4065213433897884443}
   - component: {fileID: 1406626441701412668}
   - component: {fileID: 4632048942314703849}
   - component: {fileID: 774994741684230278}
-  m_Layer: 0
+  - component: {fileID: 3155194516536872286}
+  m_Layer: 7
   m_Name: Yellow Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2452500989543857958, guid: 3ff427a8dfc98644e881adc7eae1110a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,6 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4065213433897884443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416714308913812499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a932a8cd44f6840ad7db2c0c75d9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {x: 0, y: 0}
+  flyDirection: 1
+  switchFlyMode: 0
+  yellowBeeRenderer: {fileID: 0}
+  flySpeed: 3.7
 --- !u!114 &1406626441701412668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +123,7 @@ MonoBehaviour:
     m_Bits: 8
   overlapCapsuleX: 0.35
   overlapCapsuleY: 0.5
+  capsuleDirection: 1
   bounceStrength: 17
 --- !u!114 &4632048942314703849
 MonoBehaviour:
@@ -135,6 +155,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.175}
   m_Size: {x: 0.6, y: 0.375}
   m_Direction: 1
+--- !u!95 &3155194516536872286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416714308913812499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 131ce864528cdb04aa09b627517c9953, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6901578139532635525
 GameObject:
   m_ObjectHideFlags: 0
