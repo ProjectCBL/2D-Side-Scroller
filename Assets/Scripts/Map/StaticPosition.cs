@@ -5,11 +5,9 @@ using UnityEngine;
 public class StaticPosition : MonoBehaviour
 {
 
-    public MovePlatform movingScript;
     public bool isPlayerTouchingPlatform = false;
 
     private GameObject player;
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,23 +18,20 @@ public class StaticPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerTouchingPlatform) KeepPlayerOnPlatform();
+        if (isPlayerTouchingPlatform)
+            KeepPlayerOnPlatform();
+        else
+            TakePlayerOffPlatform();
     }
 
     private void KeepPlayerOnPlatform()
     {
-        player.transform.position = Vector2.MoveTowards(
-            player.transform.position,
-            GetTopOfSprite(),
-            movingScript.platformSpeed * Time.deltaTime);
+        player.transform.parent = this.transform;
     }
 
-    private Vector2 GetTopOfSprite()
+    private void TakePlayerOffPlatform()
     {
-        Vector2 top = new Vector2(
-            transform.position.x,
-            spriteRenderer.size.y / 2);
-        return top;
+        player.transform.parent = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
