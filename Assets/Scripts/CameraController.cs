@@ -20,10 +20,8 @@ public class CameraController : MonoBehaviour
             player.transform.position.x, 
             anchorPoint1.transform.position.x,
             anchorPoint2.transform.position.x);
-        transform.position = new Vector3(
-            x,
-            transform.position.y,
-            -10);
+
+        transform.position = new Vector3(x, transform.position.y, -10);
     }
 
 }
