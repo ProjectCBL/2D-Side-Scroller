@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class BounceOff : MonoBehaviour
 {
+
+    private enum CapsuleDirection
+    {
+        VERTICAL=CapsuleDirection2D.Vertical,
+        HORIZONTAL=CapsuleDirection2D.Horizontal
+    }
+
     public GameObject headCheck;
     public LayerMask whatIsPlayer;
     public float overlapCapsuleX = 0.8f;
     public float overlapCapsuleY = 0.25f;
 
     private Rigidbody2D playerRb;
+    [SerializeField] private CapsuleDirection capsuleDirection;
     [Range(0, 80.0f)] [SerializeField] private float bounceStrength = 40.0f;
 
     // Start is called before the first frame update
@@ -36,11 +44,11 @@ public class BounceOff : MonoBehaviour
             enemySprite.size.y * overlapCapsuleY);
 
         return Physics2D.OverlapCapsule(
-            headCheck.transform.position,       // Point
-            overlapCapsule,                     // Capsule Size
-            CapsuleDirection2D.Horizontal,      // Direction of capsule
-            0.0f,                               // Angle
-            whatIsPlayer);                      // Layer mask
+            headCheck.transform.position,              // Point
+            overlapCapsule,                            // Capsule Size
+            (CapsuleDirection2D)capsuleDirection,      // Direction of capsule
+            0.0f,                                      // Angle
+            whatIsPlayer);                             // Layer mask
 
     }
 
