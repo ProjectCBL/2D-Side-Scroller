@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Decorations
+  - Background
+  - Platform
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Background
   - Enemy
   - Ground
-  - 
+  - Decorations
   - 
   - 
   - 
