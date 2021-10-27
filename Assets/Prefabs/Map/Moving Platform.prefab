@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 8130265302864263804}
     - target: {fileID: 2740584724561935086, guid: 2e9195bf2b4f78e4c89a7ba6cca7e0d0, type: 3}
       propertyPath: platformSpeed
-      value: 1.25
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 3829973068112335868, guid: 2e9195bf2b4f78e4c89a7ba6cca7e0d0, type: 3}
       propertyPath: m_Name

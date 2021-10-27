@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3839757, y: 0.46315116}
+  m_Size: {x: 1.5, y: 0.46315116}
   m_EdgeRadius: 0
 --- !u!114 &2740584724561935086
 MonoBehaviour:
@@ -124,9 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformSpeed: 0.3
-  upperPoint: {x: 0, y: 0}
-  lowerPoint: {x: 0, y: 0}
+  point1: {fileID: 0}
+  point2: {fileID: 0}
   pointDifference: 0.75
+  behaviourSwitch: 0
 --- !u!114 &7548730562880700742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a2d127d1fd80d4989f68e3c91e52e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 2740584724561935086}
   isPlayerTouchingPlatform: 0
-  spriteRenderer: {fileID: 3829973068112335869}
