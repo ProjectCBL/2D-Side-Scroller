@@ -10,6 +10,9 @@ TagManager:
   - Background
   - Platform
   - Pickup
+  - Yellow Bee
+  - Blue Bee
+  - Caterpillar
   layers:
   - Default
   - TransparentFX
