@@ -283,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.058469415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -294,7 +294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56235147, y: 0.59031487}
+  m_Size: {x: 0.5318457, y: 0.47337604}
   m_EdgeRadius: 0
 --- !u!58 &2676500984870537517
 CircleCollider2D:
@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
+  isPlayerInvincible: 0
   defaultAmmoCount: 20
   currentAmmoCount: 20
   movementScript: {fileID: 4631514034703667909}
