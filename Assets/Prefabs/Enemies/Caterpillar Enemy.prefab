@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 7649098821147721576}
   - component: {fileID: 6879229848912978272}
   - component: {fileID: 2232495334976812612}
+  - component: {fileID: 3437520555957819648}
   - component: {fileID: 5531008134655977336}
   - component: {fileID: 6953150918524667667}
   - component: {fileID: 5555478120329392643}
   m_Layer: 7
   m_Name: Caterpillar Enemy
-  m_TagString: Enemy
+  m_TagString: Caterpillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,8 +159,8 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  overlapCapsuleX: 0.25
-  overlapCapsuleY: 0.5
+  overlapCapsuleX: 0.65
+  overlapCapsuleY: 0.1
   capsuleDirection: 1
   bounceStrength: 17
 --- !u!114 &2232495334976812612
@@ -176,6 +177,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageDealt: 1
   knockBackStrength: 20.1
+--- !u!114 &3437520555957819648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357403012914146012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41fa23a7c1a9a24388b9344871b39d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &5531008134655977336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -202,7 +215,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3450123}
@@ -261,7 +274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8100084911663765620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.125, z: 0}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8778124890673888327}
