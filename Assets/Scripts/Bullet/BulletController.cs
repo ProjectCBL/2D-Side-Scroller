@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,9 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        string[] tagCollection = new string[] { "Caterpillar", "Yellow Bee", "Blue Bee" };
+
+        if(tagCollection.Contains(collision.tag))
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
