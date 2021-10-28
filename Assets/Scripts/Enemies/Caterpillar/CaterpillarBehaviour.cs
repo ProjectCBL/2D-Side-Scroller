@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaterpillarBehaviour : MonoBehaviour
+public class CaterpillarBehaviour : Enemy
 {
-
-    private enum BehaviourToggle
-    {
-        ON,
-        OFFF
-    }
 
     public Animator anim;
     public Rigidbody2D rb;
@@ -28,7 +22,6 @@ public class CaterpillarBehaviour : MonoBehaviour
     [SerializeField] private float pathingPoint1;
     [SerializeField] private float pathingPoint2;
     [SerializeField] private bool isAggroed = false;
-    [SerializeField] private BehaviourToggle behaviourSwitch;
 
     private void Awake()
     {
@@ -38,7 +31,7 @@ public class CaterpillarBehaviour : MonoBehaviour
         if (behaviourSwitch.Equals(BehaviourToggle.ON)) StartCoroutine(Behave());
     }
 
-    public IEnumerator Behave()
+    public override IEnumerator Behave()
     {
         while (true)
         {

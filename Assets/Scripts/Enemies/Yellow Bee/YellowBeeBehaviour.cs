@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YellowBeeBehaviour : MonoBehaviour
+public class YellowBeeBehaviour : Enemy
 {
 
     private enum Direction
@@ -11,25 +11,18 @@ public class YellowBeeBehaviour : MonoBehaviour
         LEFT
     }
 
-    private enum BehaviourToggle
-    {
-        ON,
-        OFF
-    }
-
     [SerializeField] private Vector2 target;
     [SerializeField] private Direction flyDirection;
-    [SerializeField] private BehaviourToggle switchFlyMode;
     [SerializeField] private SpriteRenderer yellowBeeRenderer;
     [SerializeField] [Range(0, 50.0f)] private float flySpeed = 25.0f;
 
     // Start is called before the first frame update
     void Awake()
     {
-        if (switchFlyMode.Equals(BehaviourToggle.ON)) StartCoroutine(Behave());
+        if (behaviourSwitch.Equals(BehaviourToggle.ON)) StartCoroutine(Behave());
     }
 
-    public IEnumerator Behave()
+    public override IEnumerator Behave()
     {
 
         FlipSpriteBasedOnFlyDirection();
@@ -37,6 +30,7 @@ public class YellowBeeBehaviour : MonoBehaviour
 
         while (true)
         {
+
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 target,

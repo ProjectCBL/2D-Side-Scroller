@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueBeeBehaviour : MonoBehaviour
+public class BlueBeeBehaviour : Enemy
 {
-
-    private enum BehaviourToggle
-    {
-        ON,
-        OFF
-    }
 
     public LayerMask whatIsPlayer;
 
     private GameObject player;
     private bool isAggroed = false;
-    [SerializeField] BehaviourToggle behaviourSwitch;
     [SerializeField] [Range(0, 50.0f)] float flySpeed = 25.0f;
     [SerializeField] [Range(0, 50.0f)] float aggroRadius = 25.0f;
 
@@ -26,12 +19,13 @@ public class BlueBeeBehaviour : MonoBehaviour
         if (behaviourSwitch.Equals(BehaviourToggle.ON)) StartCoroutine(Behave());
     }
 
-    public IEnumerator Behave()
+    public override IEnumerator Behave()
     {
         while (true)
         {
             if (!isAggroed) CheckIfPlayerInAggroRange();
             if (isAggroed) MoveTowardPlayer();
+            FaceTowardPlayer();
             yield return null;
         }
     }
@@ -52,6 +46,13 @@ public class BlueBeeBehaviour : MonoBehaviour
             transform.position,
             player.transform.position,
             flySpeed * Time.deltaTime);
+    }
+
+    private void FaceTowardPlayer()
+    {
+        float newX = (player.transform.position.x > this.transform.position.x) ? 1 : -1;
+        this.transform.localScale = new Vector2(
+            newX, this.transform.localScale.y);
     }
 
 }
