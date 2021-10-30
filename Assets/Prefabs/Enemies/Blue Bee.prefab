@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2817478512245451462}
   - component: {fileID: 2605358265645361383}
   - component: {fileID: 8123439486902615990}
+  - component: {fileID: 7684919600858916953}
   - component: {fileID: 3094780459243435779}
   - component: {fileID: 8736946843607036886}
-  - component: {fileID: 953766899282276728}
-  - component: {fileID: 3726408429068935353}
   - component: {fileID: 1350527485174773089}
+  - component: {fileID: 7494953127353568297}
   m_Layer: 7
   m_Name: Blue Bee
   m_TagString: Blue Bee
@@ -35,6 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714664499731826407}
+  - {fileID: 2206732662909973620}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,12 +102,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017816bb94370c940b4222e92973c266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviourSwitch: 0
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  behaviourSwitch: 0
   flySpeed: 3.5
   aggroRadius: 25.8
+--- !u!114 &7684919600858916953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305360109771418668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1fe1ae4d3b9db41920521ee3d8d3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockback: {fileID: 8736946843607036886}
+  bounceOff: {fileID: 3094780459243435779}
 --- !u!114 &3094780459243435779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,9 +138,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  overlapCapsuleX: 0.3
+  overlapCapsuleX: 0.45
   overlapCapsuleY: 0.1
-  capsuleDirection: 0
+  didPlayerTouchHeadCheck: 0
   bounceStrength: 17
 --- !u!114 &8736946843607036886
 MonoBehaviour:
@@ -140,35 +155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 1
+  hitboxCheck: {fileID: 8684179479458345513}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 8
+  overlapCapsuleX: 0.65
+  overlapCapsuleY: 0.5
   knockBackStrength: 20.1
---- !u!114 &953766899282276728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305360109771418668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41fa23a7c1a9a24388b9344871b39d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!70 &3726408429068935353
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305360109771418668}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.000000023420121, y: -0.053537823}
-  m_Size: {x: 0.54265946, y: 0.52680874}
-  m_Direction: 1
 --- !u!95 &1350527485174773089
 Animator:
   serializedVersion: 3
@@ -188,6 +181,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &7494953127353568297
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305360109771418668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.06}
+  m_Size: {x: 0.6, y: 0.5}
+  m_Direction: 1
 --- !u!1 &7399658167451194810
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,4 +226,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2817478512245451462}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8684179479458345513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2206732662909973620}
+  m_Layer: 7
+  m_Name: Hitbox Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2206732662909973620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684179479458345513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2817478512245451462}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
