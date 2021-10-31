@@ -65,7 +65,7 @@ public class GunPickupController : MonoBehaviour
         if(collision.tag == "Player" && isPlayerTouching == false)
         {
             GameObject player = collision.gameObject;
-            player.GetComponent<PlayerController>().SwitchAnimationAndSprite();
+            player.GetComponent<PlayerController>().UpdateAnimationAndSprite();
             Destroy(this.gameObject);
             isPlayerTouching = true;
         }
