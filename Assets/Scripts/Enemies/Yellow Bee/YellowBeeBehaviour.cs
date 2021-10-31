@@ -5,14 +5,15 @@ using UnityEngine;
 public class YellowBeeBehaviour : Enemy
 {
 
-    private enum Direction
+    public enum Direction
     {
         RIGHT,
         LEFT
     }
 
+    public Direction flyDirection;
+
     [SerializeField] private Vector2 target;
-    [SerializeField] private Direction flyDirection;
     [SerializeField] private SpriteRenderer yellowBeeRenderer;
     [SerializeField] [Range(0, 50.0f)] private float flySpeed = 25.0f;
 
