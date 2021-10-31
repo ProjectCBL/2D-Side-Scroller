@@ -106,7 +106,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  flySpeed: 3.5
+  flySpeed: 2.7
   aggroRadius: 25.8
 --- !u!114 &7684919600858916953
 MonoBehaviour:
