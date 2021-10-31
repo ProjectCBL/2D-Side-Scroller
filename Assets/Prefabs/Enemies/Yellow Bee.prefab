@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviourSwitch: 0
-  target: {x: 0, y: 0}
   flyDirection: 1
+  target: {x: 0, y: 0}
   yellowBeeRenderer: {fileID: 0}
   flySpeed: 3.7
 --- !u!114 &2741569163507019453
