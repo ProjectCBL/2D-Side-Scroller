@@ -14,5 +14,9 @@ public class DeathBorder : MonoBehaviour
             pc.playerHealth = 0;
 
         }
+        else if (collision.tag == "Caterpillar")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
