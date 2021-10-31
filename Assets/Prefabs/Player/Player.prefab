@@ -445,7 +445,7 @@ MonoBehaviour:
   playerHealth: 3
   isPlayerInvincible: 0
   defaultAmmoCount: 20
-  currentAmmoCount: 20
+  currentAmmoCount: 0
   movementScript: {fileID: 4631514034703667909}
   shootScript: {fileID: 4739220164075877836}
   noGunAnimations: {fileID: 9100000, guid: 46304e16a916f0247ad9514580d06e29, type: 2}
