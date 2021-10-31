@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: switchFlyMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4065213433897884443, guid: b53417e9aa035b148b53ae1585de012d, type: 3}
+      propertyPath: behaviourSwitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4416714308913812499, guid: b53417e9aa035b148b53ae1585de012d, type: 3}
       propertyPath: m_Name
       value: Jump Yellow Bee 1
@@ -387,7 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957268335}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: Enemies Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,6 +554,36 @@ PrefabInstance:
       objectReference: {fileID: 747940689}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8cc41c7b3959f044bebd69c242854f4, type: 3}
+--- !u!1 &2118374241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2118374242}
+  m_Layer: 0
+  m_Name: Event Director
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2118374242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118374241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.528239, y: 4.133512, z: -11.824973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2126558380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -611,6 +645,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4065213433897884443, guid: b53417e9aa035b148b53ae1585de012d, type: 3}
       propertyPath: switchFlyMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065213433897884443, guid: b53417e9aa035b148b53ae1585de012d, type: 3}
+      propertyPath: behaviourSwitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416714308913812499, guid: b53417e9aa035b148b53ae1585de012d, type: 3}
