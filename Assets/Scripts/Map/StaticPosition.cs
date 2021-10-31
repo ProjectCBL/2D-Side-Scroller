@@ -5,8 +5,6 @@ using UnityEngine;
 public class StaticPosition : MonoBehaviour
 {
 
-    public bool isPlayerTouchingPlatform = false;
-
     private GameObject player;
 
     // Start is called before the first frame update
@@ -15,33 +13,15 @@ public class StaticPosition : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (isPlayerTouchingPlatform)
-            KeepPlayerOnPlatform();
-        else
-            TakePlayerOffPlatform();
-    }
-
-    private void KeepPlayerOnPlatform()
-    {
-        player.transform.parent = this.transform;
-    }
-
-    private void TakePlayerOffPlatform()
-    {
-        player.transform.parent = null;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isPlayerTouchingPlatform = true;
+        player.transform.SetParent(this.gameObject.transform);
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        isPlayerTouchingPlatform = false;
+        player.transform.SetParent(null);
     }
 
 }
