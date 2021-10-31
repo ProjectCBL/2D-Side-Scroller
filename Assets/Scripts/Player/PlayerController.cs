@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public int playerHealth = 3;
     public bool isPlayerInvincible = false;
     [Range(0, 50)] public int defaultAmmoCount = 20;
-    [Range(0, 50)] public int currentAmmoCount = 20;
+    [Range(0, 50)] public int currentAmmoCount = 0;
 
     [SerializeField] private PlayerMovement movementScript;
     [SerializeField] private PlayerShoot shootScript;
@@ -54,17 +54,27 @@ public class PlayerController : MonoBehaviour
 
     private void CheckAmmoCount()
     {
-        if (currentAmmoCount <= 0) SwitchAnimationAndSprite();
+        if (currentAmmoCount <= 0) SwitchToNoGun();
     }
 
     /* =========================== Sprite and Animation =========================== */
 
-    public void SwitchAnimationAndSprite()
+    public void UpdateAnimationAndSprite()
     {
-        currentPlayerState = (currentPlayerState == PlayerStates.NOGUN) ? PlayerStates.WITHGUN : PlayerStates.NOGUN;
+        if (currentPlayerState.Equals(PlayerStates.NOGUN))
+        {
+            currentPlayerState = PlayerStates.WITHGUN;
+            SwitchSprite(currentPlayerState);
+            SwitchMovementAnimator(currentPlayerState);
+        }
+        currentAmmoCount += defaultAmmoCount;
+    }
+
+    private void SwitchToNoGun()
+    {
+        currentPlayerState = PlayerStates.NOGUN;
         SwitchSprite(currentPlayerState);
         SwitchMovementAnimator(currentPlayerState);
-        currentAmmoCount = defaultAmmoCount;
     }
 
     private void SwitchSprite(PlayerStates state)
@@ -82,7 +92,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator ActivateInvincibiltyFrames()
     {
         isPlayerInvincible = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         isPlayerInvincible = false;
     }
 
