@@ -38,7 +38,6 @@ public class PlayerShoot : MonoBehaviour
         if (shootPressed)
         {
             anim.SetBool("IsShooting", false);
-            //StopAllCoroutines();
             
             StartCoroutine(muzzleScript.PlayMuzzleAnimation());
 
