@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckHealth()
     {
-        if (playerHealth <= 0) KillPlayer();
+        if (playerHealth <= 0) RestartLevel();
     }
 
     public void DamagePlayer(int damage)
@@ -109,6 +111,18 @@ public class PlayerController : MonoBehaviour
     private void KillPlayer()
     {
         Destroy(this.gameObject);
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    /* =========================== Player Input =========================== */
+
+    public void OnEscape(InputAction.CallbackContext ctx)
+    {
+        Application.Quit();
     }
 
 }
