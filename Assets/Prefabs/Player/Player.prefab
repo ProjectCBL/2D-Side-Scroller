@@ -425,6 +425,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: db6fd963-80e1-4451-9ba8-aa8805b7e368
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 15190553022747657}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnEscape
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9a3af69f-5739-4190-abf0-455e1a482eec
+    m_ActionName: Player/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75825653-754f-4a88-951a-37454ad328a2
+    m_ActionName: Player/Restart[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -446,6 +466,7 @@ MonoBehaviour:
   isPlayerInvincible: 0
   defaultAmmoCount: 20
   currentAmmoCount: 0
+  currentPlayerState: 0
   movementScript: {fileID: 4631514034703667909}
   shootScript: {fileID: 4739220164075877836}
   noGunAnimations: {fileID: 9100000, guid: 46304e16a916f0247ad9514580d06e29, type: 2}
@@ -453,7 +474,6 @@ MonoBehaviour:
   gunDefaultSprite: {fileID: 7176334326959469849, guid: 3ff427a8dfc98644e881adc7eae1110a, type: 3}
   noGunDefaultSprite: {fileID: 5287519128651476915, guid: 3ff427a8dfc98644e881adc7eae1110a, type: 3}
   spriteRenderer: {fileID: 4784533238001006058}
-  currentPlayerState: 0
 --- !u!114 &4739220164075877836
 MonoBehaviour:
   m_ObjectHideFlags: 0
