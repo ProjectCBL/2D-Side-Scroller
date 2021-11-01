@@ -33,8 +33,8 @@ public class InGameUIController: MonoBehaviour
     }
 
     private void ShowAmmoCount()
-    {
-        if (player.GetComponent<PlayerShoot>().enabled) 
+    { 
+        if (playerController.currentPlayerState.Equals(PlayerController.PlayerStates.WITHGUN)) 
             ammoContainer.SetActive(true);
         else 
             ammoContainer.SetActive(false);
