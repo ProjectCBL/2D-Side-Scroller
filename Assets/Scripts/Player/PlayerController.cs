@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerInvincible = false;
     [Range(0, 50)] public int defaultAmmoCount = 20;
     [Range(0, 50)] public int currentAmmoCount = 0;
+    public PlayerStates currentPlayerState = PlayerStates.NOGUN;
 
     [SerializeField] private PlayerMovement movementScript;
     [SerializeField] private PlayerShoot shootScript;
@@ -21,8 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController gunAnimations;
     [SerializeField] private Sprite gunDefaultSprite;
     [SerializeField] private Sprite noGunDefaultSprite;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private PlayerStates currentPlayerState = PlayerStates.NOGUN;
+    [SerializeField] private SpriteRenderer spriteRenderer; 
 
     // Start is called before the first frame update
     void Awake()
