@@ -956,6 +956,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4739220164075877836, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784533238001006059, guid: 82bce44a0cb50c8428448ee144077eb7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1181,6 +1185,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 257634326579243589, guid: a9dbd627029154546a51bac20b96570a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257634326579243590, guid: a9dbd627029154546a51bac20b96570a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1412532399}
+    - target: {fileID: 257634328052180363, guid: a9dbd627029154546a51bac20b96570a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1473,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 1412532399}
     - target: {fileID: 6239264656372078879, guid: 30289adc50b5a214eb9056b5acbe1d72, type: 3}
       propertyPath: nextScene
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6239264656372078879, guid: 30289adc50b5a214eb9056b5acbe1d72, type: 3}
       propertyPath: endTransition

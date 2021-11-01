@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 1328067974}
     - target: {fileID: 6239264656372078879, guid: 30289adc50b5a214eb9056b5acbe1d72, type: 3}
       propertyPath: nextScene
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6239264656372078879, guid: 30289adc50b5a214eb9056b5acbe1d72, type: 3}
       propertyPath: endTransition
@@ -766,6 +766,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 257634326579243589, guid: a9dbd627029154546a51bac20b96570a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257634328052180363, guid: a9dbd627029154546a51bac20b96570a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
