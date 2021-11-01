@@ -5,8 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject player, anchorPoint1, anchorPoint2;
+    public GameObject player, anchorPoint1, anchorPoint2;
 
     // Update is called once per frame
     void Update()

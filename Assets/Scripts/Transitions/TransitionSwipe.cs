@@ -4,57 +4,52 @@ using UnityEngine;
 
 public class TransitionSwipe : MonoBehaviour
 {
-
-    public string swipeDirection;
+    public Transform endPoint;
+    public GameObject transition;
     public float swipeSpeed = 20f;
-    public float middleOfScreen = 17.0f;
+    public bool animationIsDone = false;
+    public bool animationTriggered = false;
 
-    private Dictionary<string, bool> positionCheck = new Dictionary<string, bool>();
-    private Dictionary<string, Vector2> centerPositions = new Dictionary<string, Vector2>();
+    private Vector2 originalPos;
+    private Vector2 endPointPos;
 
     private void Awake()
     {
-        SetChecks();
-        SetCenterOfScreen();
+        originalPos = transition.transform.position;
+        endPointPos = endPoint.position;
     }
 
-    /*Uncomment to test script
-     * private void Start()
+    /*Uncomment to test script*/
+    /*private void Start()
     {
         StartCoroutine(Swipe());
     }*/
 
     public IEnumerator Swipe()
     {
+        animationTriggered = true;
+
         while (true){
-            if (positionCheck[swipeDirection]) break;
-            MoveTowardsCenterOfScreen();
+            if (DidCurtainReachPoint()) break;
+            MoveTowardsPoint();
             yield return null;
         }
+
+        animationTriggered = false;
+        animationIsDone = true;
     }
 
-    private void MoveTowardsCenterOfScreen()
+    private void MoveTowardsPoint()
     {
-        transform.position = Vector2.MoveTowards(
-            transform.position,
-            centerPositions[swipeDirection],
+        transition.transform.position = Vector2.MoveTowards(
+            transition.transform.position,
+            endPoint.position,
             swipeSpeed * Time.deltaTime);
     }
 
-    private void SetChecks()
+    private bool DidCurtainReachPoint()
     {
-        positionCheck.Add("Right", (transform.position.x >= middleOfScreen));
-        positionCheck.Add("Left", (transform.position.x <= middleOfScreen));
-        positionCheck.Add("Down", (transform.position.y <= middleOfScreen));
-        positionCheck.Add("Up", (transform.position.y >= middleOfScreen));
+        return (transition.transform.position.x == endPoint.position.x 
+            && transition.transform.position.y == endPoint.position.y);
     }
-
-    private void SetCenterOfScreen()
-    {
-        centerPositions.Add("Right", new Vector2(middleOfScreen, transform.position.y));
-        centerPositions.Add("Left", new Vector2(middleOfScreen, transform.position.y));
-        centerPositions.Add("Down", new Vector2(transform.position.x, middleOfScreen));
-        centerPositions.Add("Up", new Vector2(transform.position.x, middleOfScreen));
-    }
-
 }

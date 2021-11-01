@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathBorder : MonoBehaviour
 {
@@ -8,11 +9,9 @@ public class DeathBorder : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            PlayerController pc = collision.
-                gameObject.
-                GetComponent<PlayerController>();
-            pc.playerHealth = 0;
-
+            SceneManager.LoadScene(
+                SceneManager.GetActiveScene().name,
+                LoadSceneMode.Single);
         }
         else if (collision.tag == "Caterpillar")
         {

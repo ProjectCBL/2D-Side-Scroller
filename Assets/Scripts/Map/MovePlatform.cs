@@ -27,7 +27,7 @@ public class MovePlatform : MonoBehaviour
         PickBehaviour();
     }
 
-    private IEnumerator MoveBackAndForth()
+    public IEnumerator MoveBackAndForth()
     {
 
         targetPoint = point1.localPosition;
