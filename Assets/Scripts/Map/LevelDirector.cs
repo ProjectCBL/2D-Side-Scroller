@@ -14,6 +14,7 @@ public class LevelDirector : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(800, 500, false);
         DisablePlayerScripts();
         StartTransitionAnimation(startTransition);
     }
