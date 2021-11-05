@@ -6,5 +6,3 @@ Source code: https://github.com/ProjectCBL/2D-Side-Scroller
 Asset Pack: https://www.kenney.nl/assets/pixel-line-platformer
 
 Itch.io Page of Game: https://projectcbl.itch.io/side-shooter
-
-Feel free to leave any comments or suggestions as these are much appreciated.  Also thank you visiting this page or trying out my game.
